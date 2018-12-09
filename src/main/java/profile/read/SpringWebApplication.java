@@ -1,4 +1,4 @@
-package configuration.read;
+package profile.read;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,15 +8,17 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "configuration.read" })
+@ComponentScan(basePackages = { "profile.read" })
 public class SpringWebApplication {
 
-	private static final Logger logger = LoggerFactory.getLogger(SpringWebApplication.class);
+	private final static Logger logger = LoggerFactory.getLogger(SpringWebApplication.class);
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(SpringWebApplication.class, args);
-		
 
+		DataSource datasource = (DataSource) context.getBean("dataSource1");
+
+		logger.info("datasource  :: " + datasource);
 	}
 
 }
