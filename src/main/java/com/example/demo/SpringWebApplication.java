@@ -29,22 +29,27 @@ import com.properties.Propertieshandler;
 @PropertySource("classpath:test.properties")
 public class SpringWebApplication {
 
+	
+	
 	private final Logger logger = LoggerFactory.getLogger(getClass().getName());
+	
+	
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(SpringWebApplication.class, args);
-
 		
+
 		//reading properties file
 		Propertieshandler Propertieshandler = context.getBean(Propertieshandler.class);
 		Propertieshandler.readingPropertiesFile();
 		
-
+		
 		EmployeeService employeeService = context.getBean(EmployeeServiceImpl.class);
 
+		
 		saveEmployees(employeeService);
 		
-
+		
 		// getEmployee(employeeService);
 	}
 
@@ -100,6 +105,7 @@ public class SpringWebApplication {
 			System.out.println("employee::adress " + employee.get().getAddress());
 		}
 
+		
 		employee = employeeService.findByIdAndName(3l, "vikash");
 
 		if (employee.isPresent()) {

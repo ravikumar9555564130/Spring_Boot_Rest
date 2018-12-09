@@ -15,6 +15,8 @@ public class Propertieshandler {
 	Environment env;
 
 	public void readingPropertiesFile() {
+		
+		
 		logger.info("readingPropertiesFile :: username ::" + env.getProperty("test.username"));
 		logger.info("readingPropertiesFile :: username ::" + env.getProperty("test.password"));
 
