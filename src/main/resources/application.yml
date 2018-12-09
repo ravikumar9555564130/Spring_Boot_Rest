@@ -1,3 +1,7 @@
 dev:
      msg2: "yml"
      msg3: "yml"
+     
+qa:
+     msg2: "yml"
+     msg3: "yml"     
