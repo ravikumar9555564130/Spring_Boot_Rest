@@ -38,6 +38,7 @@ public class SpringWebApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(SpringWebApplication.class, args);
 		
+		
 
 		//reading properties file
 		Propertieshandler Propertieshandler = context.getBean(Propertieshandler.class);
